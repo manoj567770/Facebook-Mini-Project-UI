@@ -1,25 +1,65 @@
 import React, { useState } from "react";
 import Input, { INPUT_TYPE } from "../../Input/Input";
+import "./PostEditorPageStyles.css";
+import Button from "../../Button/Button";
+import axios from "axios";
+import { getCreateBlogApiUrl } from "../../../Services/Services";
+import { getUserToken } from "../../../Services/StorageService";
+import { useNavigate } from "react-router-dom";
 
 const PostEditorPage = () => {
   const [title, setTitle] = useState(null);
   const [content, setContent] = useState(null);
+  const navigate = useNavigate();
 
-  const onTitleChange = (event) => {
-    const title = event.target.value;
+  const onTitleChange = (value) => {
+    const title = value;
     if (title) {
       setTitle(title);
     }
   };
 
-  const onContentChange = (event) => {
-    const content = event.target.value;
+  const onContentChange = (value) => {
+    const content = value;
     if (content) {
       setContent(content);
     }
   };
+
+  const onCreateBlogClicked = () => {
+    if (!title) {
+      alert("Title Must be Present!");
+      return;
+    }
+
+    if (!content) {
+      alert("Content is Missing!");
+      return;
+    }
+
+    const headers = {
+      Authorization: `Bearer ${getUserToken()}`,
+    };
+
+    axios
+      .post(
+        getCreateBlogApiUrl(),
+        {
+          title: title,
+          content: content,
+        },
+        { headers: headers }
+      )
+      .then((res) => {
+        alert("Blog is now ready to read!");
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
-    <div>
+    <div className="page-container">
       <div>Blog Creation / Modification</div>
       <div className="create-blog-form-container">
         <div>
@@ -36,6 +76,7 @@ const PostEditorPage = () => {
             onChangeCb={onContentChange}
           />
         </div>
+        <Button text={"submit"} onClickCb={onCreateBlogClicked} />
       </div>
     </div>
   );
