@@ -14,6 +14,7 @@ function App() {
         <Route path="/dashboard" element={<DashBoard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/add-post" element={<PostEditorPage />} />
+        <Route path="/edit/:postTitle" element={<PostEditorPage />} />
       </Routes>
     </Router>
   );

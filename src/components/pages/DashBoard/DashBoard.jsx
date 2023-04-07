@@ -2,10 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getBlogsApiUrl } from "../../../Services/Services";
-import { getUserData, getUserToken } from "../../../Services/StorageService";
+import {
+  getUserData,
+  getUserToken,
+  removeUserData,
+} from "../../../Services/StorageService";
 import Blogs from "../../Blogs/Blogs";
 import Button from "../../Button/Button";
 import "./DashBoardStyle.css";
+import { removeUserToken } from "../../../Services/StorageService";
 
 const DashBoard = () => {
   const [blogs, setBlogs] = useState([]);
@@ -50,6 +55,13 @@ const DashBoard = () => {
     );
   };
 
+  const onLogoutClicked = () => {
+    removeUserToken();
+    navigate("/login");
+    removeUserData();
+    return;
+  };
+
   return (
     <div>
       <div className="banner">
@@ -63,6 +75,9 @@ const DashBoard = () => {
             onClickCb={onPostAddBtnClicked}
           />
         </div>
+      </div>
+      <div className="header">
+        <h3 onClick={() => onLogoutClicked()}>Logout</h3>
       </div>
       <div className="blogs-container">
         {blogs.length > 0 ? renderBlogsList(blogs) : "NO Blogs are there!"}

@@ -1,21 +1,20 @@
-.login-page-container{
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-
+.login-page-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
 }
 
-.banner{
-    flex: 1;
-    height: 100%;
-    background-color: blueviolet;
-
+.banner {
+  flex: 1;
+  height: 100%;
+  background-color: blueviolet;
 }
 
-.login-form-container{
-        display: flex;
-        flex: 1;
-        flex-direction: row;
-        align-items: center;
-        padding-left: 15px;
+.login-form-container {
+  flex: 1;
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
 }

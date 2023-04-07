@@ -5,12 +5,18 @@ import Button from "../../Button/Button";
 import axios from "axios";
 import { getCreateBlogApiUrl } from "../../../Services/Services";
 import { getUserToken } from "../../../Services/StorageService";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { findBlogBytitle } from "../../../Services/BlogSevice";
 
 const PostEditorPage = () => {
   const [title, setTitle] = useState(null);
   const [content, setContent] = useState(null);
   const navigate = useNavigate();
+  const { postTitle } = useParams();
+
+  if (postTitle) {
+    console.log(findBlogBytitle(postTitle));
+  }
 
   const onTitleChange = (value) => {
     const title = value;
