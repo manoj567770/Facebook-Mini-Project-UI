@@ -4,6 +4,7 @@ import LoginPage from "./components/pages/login/LoginPage";
 import PostEditorPage from "./components/pages/PostEditor/PostEditorPage";
 import Profile from "./components/pages/Profile/Profile";
 import SignupPage from "./components/pages/singup/SignupPage";
+import RedirectPage from "./components/pages/404page/RedirectPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/add-post" element={<PostEditorPage />} />
         <Route path="/edit/:postTitle" element={<PostEditorPage />} />
+        <Route path="/*" element={<RedirectPage />} />
       </Routes>
     </Router>
   );

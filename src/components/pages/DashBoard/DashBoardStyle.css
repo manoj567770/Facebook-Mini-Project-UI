@@ -1,7 +1,6 @@
 .banner {
     display: flex;
     flex-direction: column;
-    background-color: blueviolet;
     align-items: center;
     justify-content: center;
     height: 300px;

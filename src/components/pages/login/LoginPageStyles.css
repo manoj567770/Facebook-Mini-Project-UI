@@ -7,14 +7,30 @@
 .banner {
   flex: 1;
   height: 100%;
-  background-color: blueviolet;
+  background-image: url('./rain-window.jpg');
 }
 
 .login-form-container {
+  background-color: rgb(147, 198, 243);
   flex: 1;
   display: flex;
 
   flex-direction: row;
   align-items: center;
   padding-left: 15px;
+  
+}
+
+.login {
+  background-color:rgb(77, 76, 75);
+  height: 130px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+button {
+  background-color: rgb(171, 203, 231);
+  color: white;
+  margin-left: 130px;
+  border-radius: 10px;
 }

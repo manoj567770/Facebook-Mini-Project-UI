@@ -63,7 +63,7 @@ function LoginPage() {
       <div className="login-page-container">
         <div className="banner"></div>
         <div className="login-form-container">
-          <div>
+          <div className="login">
             <div>
               <Input
                 type={INPUT_TYPE.INPUT_TXT}

@@ -1,19 +1,21 @@
 .blog-container{
+    background-color: antiquewhite;
     border : 1px solid gray;
     padding: 15px;
     border-radius: 15px;
     margin: 10px;
+
 }
 
 .blog-title{
     font-size: 40px;
-    color: khaki;
+    color: rgb(177, 162, 32);
     font-weight: 400;
 }
 
 .blog-content{
     font-size: 20px;
-    color: blue;
+    color: rgb(42, 42, 44);
     font-weight: lighter;
 }
 

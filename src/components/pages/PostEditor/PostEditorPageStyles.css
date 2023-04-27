@@ -1,8 +1,14 @@
 .page-container{
+    background-color: aquamarine;
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.create-blog-form-container{
+    background-color:rgb(137, 137, 240);
+    border-radius: 10px;
 }
