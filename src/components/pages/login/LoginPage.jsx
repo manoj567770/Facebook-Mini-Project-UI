@@ -10,6 +10,7 @@ import {
   setUserToken,
 } from "../../../Services/StorageService";
 import { useNavigate } from "react-router-dom";
+import SignupPage from "../singup/SignupPage";
 
 function LoginPage() {
   const [phone, setPhone] = useState(null);
@@ -58,6 +59,9 @@ function LoginPage() {
         console.log(err);
       });
   };
+  const signupbtn = () => {
+    navigate("/signup");
+  };
   return (
     <>
       <div className="login-page-container">
@@ -81,6 +85,9 @@ function LoginPage() {
             <div>
               <Button text={"Login"} onClickCb={onLoginBtnClick} />
             </div>
+            <button className="signup" onClick={signupbtn}>
+              signup
+            </button>
           </div>
         </div>
       </div>

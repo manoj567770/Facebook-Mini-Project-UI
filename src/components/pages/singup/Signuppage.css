@@ -1,0 +1,38 @@
+.signup-page-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .banner {
+    flex: 1;
+    height: 100%;
+    background-image: url('./rain-window.jpg');
+  }
+  
+  .signup-form-container {
+    background-color: rgb(147, 198, 243);
+    flex: 1;
+    display: flex;
+  
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+    
+  }
+  
+  .signup {
+    background-color:rgb(34, 33, 31);
+    height: 130px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  
+  button {
+    background-color: rgb(57, 59, 61);
+    color: white;
+    margin-left: 130px;
+    border-radius: 10px;
+  }
+  
+  
