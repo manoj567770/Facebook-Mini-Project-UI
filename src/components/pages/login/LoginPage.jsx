@@ -10,7 +10,6 @@ import {
   setUserToken,
 } from "../../../Services/StorageService";
 import { useNavigate } from "react-router-dom";
-import SignupPage from "../singup/SignupPage";
 
 function LoginPage() {
   const [phone, setPhone] = useState(null);
