@@ -45,7 +45,6 @@ function LoginPage() {
         password: password,
       })
       .then((res) => {
-        console.log(res);
         if (res.data.token) {
           setUserToken(res.data.token);
         }

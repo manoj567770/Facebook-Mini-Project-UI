@@ -35,6 +35,10 @@ function SignupPage() {
     });
     alert("signup successfull please login");
   };
+
+  const loginPage = () => {
+    navigate("/login");
+  };
   return (
     <>
       <div className="signup-page-container">
@@ -65,6 +69,9 @@ function SignupPage() {
             <div>
               <Button text={"submit"} onClickCb={onSignUpBtnClick} />
             </div>
+            <button className="loginbtn" onClick={loginPage}>
+              Login
+            </button>
           </div>
         </div>
       </div>
